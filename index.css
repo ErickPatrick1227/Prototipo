@@ -1,0 +1,271 @@
+/* Reset e estilo base */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+.container {
+    width: 80%;
+    margin: auto;
+    padding-top: 20px;
+}
+
+h1,
+h2 {
+    color: #333;
+    text-align: center;
+}
+
+/* Estilo do ícone de menu fora da Sidebar */
+#menu-toggle {
+    font-size: 30px;
+    color: #fff;
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    cursor: pointer;
+    z-index: 1001;
+    transition: color 0.3s ease;
+}
+
+/* Estilo do ícone de menu quando a sidebar estiver aberta */
+#menu-toggle.open {
+    color: #4CAF50;
+}
+
+/* Estilo do menu lateral */
+.sidebar {
+    width: 250px;
+    position: fixed;
+    left: -250px;
+    top: 0;
+    height: 100%;
+    background-color: #333;
+    color: white;
+    transition: left 0.3s ease;
+    padding: 20px;
+    z-index: 1000;
+}
+
+/* Quando a sidebar estiver visível */
+.sidebar.open {
+    left: 0;
+}
+
+/* Estilo dos itens dentro do menu */
+.sidebar h2 {
+    margin-bottom: 20px;
+}
+
+.sidebar ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    margin-bottom: 15px;
+}
+
+.sidebar ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2em;
+}
+
+.sidebar ul li a:hover {
+    text-decoration: underline;
+}
+
+/* Estilo do conteúdo */
+.content {
+    margin-left: 0;
+    transition: margin-left 0.3s ease;
+    padding: 20px;
+}
+
+.content.menu-open {
+    margin-left: 270px;
+}
+
+/* Estilo do formulário de relatório e tabela de marés */
+.report-form,
+.tabela-marés {
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+/* Estilo dos inputs e textarea */
+input[type="file"],
+input[type="text"],
+textarea,
+select,
+input[type="month"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+/* Estilo do botão */
+button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    display: block;
+    width: 100%;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+/* Estilo da lista de relatórios */
+.report-list {
+    margin-top: 20px;
+}
+
+.report-item {
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin-bottom: 15px;
+}
+
+.report-item:hover {
+    background-color: #f9f9f9;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilo da tabela de marés */
+.tide-item {
+    margin-bottom: 10px;
+}
+
+#tide-table {
+    margin-top: 15px;
+    padding: 10px;
+    border-top: 2px solid #ccc;
+}
+
+#tide-table table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+#tide-table th,
+#tide-table td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+#tide-table th {
+    background-color: #f4f4f4;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .container {
+        width: 90%;
+    }
+
+    .sidebar {
+        width: 200px;
+        left: -200px; /* Sidebar inicialmente fora da tela */
+    }
+
+    /* Quando a sidebar estiver visível */
+    .sidebar.open {
+        left: 0;
+    }
+
+    .content.menu-open {
+        margin-left: 200px; /* Ajuste do conteúdo quando a sidebar estiver aberta */
+    }
+}
+
+/* Para telas muito pequenas, como smartphones */
+@media (max-width: 480px) {
+    .sidebar {
+        width: 100%;
+        left: -100%; /* Sidebar fica fora da tela inicialmente */
+    }
+
+    .sidebar.open {
+        left: 0; /* Sidebar ocupa toda a tela quando aberta */
+    }
+
+    .content.menu-open {
+        margin-left: 0; /* O conteúdo ocupa toda a largura disponível */
+    }
+
+    /* Ícone de menu maior para facilitar o toque em smartphones */
+    #menu-toggle {
+        font-size: 40px;
+        top: 10px;
+        left: 10px;
+    }
+}
+
+/* Estilo do formulário de login e cadastro */
+.login-form,
+.register-form {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    width: 400px;
+    margin: 0 auto;
+}
+
+.login-form input,
+.register-form input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.login-form button,
+.register-form button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    width: 100%;
+}
+
+.login-form button:hover,
+.register-form button:hover {
+    background-color: #45a049;
+}
+
+.login-form p,
+.register-form p {
+    text-align: center;
+}
+
+p {
+    margin-bottom: 5px; /* Ajuste o valor conforme necessário */
+}
+
+/* Estilo para as imagens com altura e largura iguais */
+img {
+    width: 270px;  /* Define a largura fixa para as imagens */
+    height: 270px;  /* Define a altura fixa para as imagens */
+    object-fit: contain;  /* Ajusta a imagem para caber no contêiner sem cortar */
+    border-radius: 10px;  /* Opcional: para adicionar bordas arredondadas */
+}

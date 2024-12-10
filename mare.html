@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tábua de Marés</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+    <div class="container">
+        <!-- Botão para abrir e fechar o menu lateral -->
+        <div id="menu-toggle" class="menu-toggle" onclick="toggleSidebar()">
+            &#9776; <!-- Ícone de 3 linhas horizontais (hamburger) -->
+        </div>
+
+        <!-- Menu Lateral -->
+        <div id="sidebar" class="sidebar">
+            <h2>Menu</h2>
+            <ul>
+                <li><a href="index.html">Relatar Acidentes</a></li>
+                <li><a href="mare.html">Tábua de Marés</a></li>
+                <li><a href="sobre.html">Sobre o Site</a></li>
+            </ul>
+        </div>
+
+        <!-- Conteúdo Principal -->
+        <div class="content">
+            <h1>Consultar Tábua de Marés</h1>
+
+            <!-- Seção da Tábua de Marés -->
+            <div class="tabela-marés" id="tideTableSection">
+                <h2>Consulte a Tábua de Marés em Pernambuco</h2>
+
+                <!-- Seleção de Localidade -->
+                <label for="locationTide">Escolha a Localidade:</label>
+                <select id="locationTide" onchange="fetchTideTable()">
+                    <option value="recife">Recife</option>
+                    <option value="olinda">Olinda</option>
+                    <option value="jaboatao">Jaboatão</option>
+                    <option value="piedade">Piedade</option>
+                    <option value="porto-galinhas">Porto de Galinhas</option>
+                </select>
+
+                <!-- Seletor de Mês e Ano -->
+                <label for="datePicker">Escolha o Mês e Ano:</label>
+                <input type="month" id="datePicker" onchange="fetchTideTable()">
+
+                <!-- Exibição da Tábua de Marés -->
+                <div id="tide-table"></div>
+            </div>
+        </div>
+
+    <script src="index.js"></script>
+</body>
+
+</html>

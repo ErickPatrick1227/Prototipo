@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Relatar Acidente</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+    <div class="container">
+        <!-- Menu lateral -->
+        <div id="menu-toggle" class="menu-toggle" onclick="toggleSidebar()">&#9776;</div>
+        <div id="sidebar" class="sidebar">
+            <h2>Menu</h2>
+            <ul>
+                <li><a href="index.html">Relatar Acidentes</a></li>
+                <li><a href="mare.html">Tábua de Marés</a></li>
+                <li><a href="sobre.html">Sobre o Site</a></li>
+            </ul>
+        </div>
+
+        <!-- Conteúdo principal -->
+        <div class="content">
+            <!-- Formulário de Login -->
+            <div id="loginForm" class="login-form">
+                <h2>Login</h2>
+                <label for="emailLogin">E-mail:</label>
+                <input type="email" id="emailLogin" placeholder="Digite seu e-mail" required>
+                <label for="passwordLogin">Senha:</label>
+                <input type="password" id="passwordLogin" placeholder="Digite sua senha" required>
+                <button type="button" onclick="login()">Entrar</button>
+                <p id="loginError" style="color: red; display: none;">E-mail ou senha incorretos.</p>
+                <button type="button" onclick="toggleToRegister()">Não tem uma conta? Cadastre-se</button>
+            </div>
+
+            <!-- Formulário de Cadastro -->
+            <div id="registerForm" class="register-form" style="display: none;">
+                <h2>Crie seu Cadastro agora</h2><!-- Alterado para "Cadastro" -->
+                <label for="nameRegister">Nome:</label>
+                <input type="text" id="nameRegister" placeholder="Digite seu nome" required>
+
+                <label for="emailRegister">E-mail:</label>
+                <input type="email" id="emailRegister" placeholder="Digite seu e-mail" required>
+
+                <label for="passwordRegister">Senha:</label>
+                <input type="password" id="passwordRegister" placeholder="Digite sua senha" required>
+
+                <button type="button" onclick="register()">Cadastrar</button> <!-- Alterado para "Cadastrar" -->
+                <p id="registerError" style="color: red; display: none;"></p>
+                <button type="button" onclick="toggleToLogin()">Já tem uma conta? Faça Login</button>
+            </div>
+
+            <!-- Formulário de Relato (apenas visível após login) -->
+            <div id="reportForm" class="report-form" style="display:none;">
+                <h2>Reporte um Acidente</h2>
+                <label for="locationInput">Local do acidente:</label>
+                <input type="text" id="locationInput" placeholder="Digite o local do acidente" required>
+                <label for="descriptionInput">Descrição do acidente:</label>
+                <textarea id="descriptionInput" placeholder="Digite uma descrição do acidente" required></textarea>
+                <label for="mediaInput">Adicionar imagem ou vídeo:</label>
+                <input type="file" id="mediaInput" accept="image/*,video/*">
+                <button type="button" onclick="submitReport()">Enviar Relato</button>
+                <p id="reportSuccess" style="color: green; display: none;">Relato enviado com sucesso!</p>
+            </div>
+
+            <!-- Relatos existentes -->
+            <div id="report-list" class="report-list">
+                <h3>Relatos de acidentes:</h3>
+            </div>
+        </div>
+    </div>
+
+    <script src="index.js"></script>
+</body>
+
+</html>
